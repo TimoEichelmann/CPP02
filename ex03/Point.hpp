@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teichelm <teichelm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:52:46 by timo              #+#    #+#             */
-/*   Updated: 2024/10/15 15:40:50 by teichelm         ###   ########.fr       */
+/*   Created: 2024/10/15 16:13:09 by teichelm          #+#    #+#             */
+/*   Updated: 2024/10/15 16:21:32 by teichelm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef POINT_HPP
+#define POINT_HPP
+
 #include "Fixed.hpp"
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+class Point
 {
-    os << fixed.toFloat();
-    return os;
-}
-
-int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
+	private:
+		Fixed const x;
+		Fixed const y;
+	public:
+		Point();
+		Point(const float xi, const float yi);
+		Point(const Point& p);
+		Point& operator=(const Point& p);
+		float	getx();
+		float	gety();
+		~Point();
 }
 
 
+#endif

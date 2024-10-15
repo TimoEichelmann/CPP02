@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: timo <timo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: teichelm <teichelm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:52:46 by timo              #+#    #+#             */
-/*   Updated: 2024/10/09 11:17:09 by timo             ###   ########.fr       */
+/*   Updated: 2024/10/15 14:20:05 by teichelm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
-    os << static_cast<float>(fixed.getRawBits()) / (1 << 8);
+    os << std::fixed << std::setprecision(8) << fixed.toFloat();
     return os;
 }
 

@@ -26,13 +26,13 @@ Fixed::Fixed(const Fixed &obj)
 Fixed::Fixed(const int con)
 {	
 	std::cout << "Int constructor called" << std::endl;
-	this->val = round(con * (1 << 8));
+	this->val = roundf(con * (1 << 8));
 }
 
 Fixed::Fixed(const float con)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->val = round(con * (1 << 8));
+	this->val = roundf(con * (1 << 8));
 }
 
 Fixed& Fixed::operator= (const Fixed& obj)
