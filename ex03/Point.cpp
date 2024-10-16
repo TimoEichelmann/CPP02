@@ -3,28 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teichelm <teichelm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: timo <timo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:09:23 by teichelm          #+#    #+#             */
-/*   Updated: 2024/10/15 16:22:34 by teichelm         ###   ########.fr       */
+/*   Updated: 2024/10/16 11:22:01 by timo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point() : x(0), y(0)
+Point::Point()
 {}
 
 Point::Point(const float xi, const float yi) : x(xi), y(yi)
 {}
 
-Point::Point(const Point& p)
+Point::Point(const Point& p) : x(p.x),	y(p.y)
+{}
+
+Point& Point::operator=(const Point& p)
 {
-	this->x(p.x);
-	this->y(p.y);
+	if (this == &p)
+		return (*this);
+	return (*this);
 }
 
-Point::Point& operator=(const Point& p)
-float	Point::getx()
-float	Point::gety()
+int	Point::getx() const
+{
+	int temp = this->x.getRawBits();
+	return (temp);
+}
+
+int	Point::gety() const
+{
+	int temp = this->y.getRawBits();
+	return (temp);
+}
+
 Point::~Point()
+{}
